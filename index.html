@@ -90,33 +90,42 @@ textarea { resize: vertical; line-height: 1.4; }
 .preview-toolbar { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; padding: 0 8px 18px; }
 .preview-toolbar h2 { font-size: 22px; }
 .paper-size { background: rgba(255,255,255,.5); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; }
-.receipt-paper { position: relative; z-index: 1; width: min(80mm, 100%); min-height: 120mm; margin: 0 auto; padding: 14px 13px 13px; overflow: hidden; background: var(--paper); color: #111820; box-shadow: 0 17px 28px rgba(24,31,36,.17); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 9px; line-height: 1.35; }
+.receipt-paper { position: relative; z-index: 1; width: min(100mm, 100%); min-height: 120mm; margin: 0 auto; padding: 14px 18px 13px; overflow: hidden; background: var(--paper); color: #111820; box-shadow: 0 17px 28px rgba(24,31,36,.17); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 9px; line-height: 1.35; }
 .receipt-header { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .receipt-logo { display: block; width: 32mm; height: 32mm; margin: -2px auto 3px; object-fit: contain; }
-.receipt-header h2 { max-width: 100%; margin: 0; color: var(--navy); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 17px; line-height: 1; letter-spacing: -.04em; }
-.receipt-tagline, .receipt-meta-line { max-width: 100%; margin: 4px 0 0; color: #67747d; font-size: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.receipt-header h2 { max-width: 100%; margin: 0; color: var(--navy); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 21px; line-height: 1; letter-spacing: -.04em; }
+.receipt-tagline, .receipt-meta-line { max-width: 100%; margin: 4px 0 0; color: #67747d; font-size: 10.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .receipt-rule { height: 1px; margin: 9px 0; background: #17212b; opacity: .8; }
 .receipt-rule.dotted { height: 0; border-top: 1px dashed #7d878d; background: none; }
 .receipt-info, .receipt-customer, .receipt-total-row, .receipt-item-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
-.receipt-info { color: #57646d; font-size: 8px; }
-.receipt-customer { display: block; margin-top: 5px; color: #57646d; font-size: 8px; }
+.receipt-info { color: #57646d; font-size: 10.5px; }
+.receipt-customer { display: block; margin-top: 5px; color: #57646d; font-size: 10.5px; }
 .receipt-customer strong { color: #1b2730; }
-.receipt-items-head { display: grid; grid-template-columns: 1fr auto; color: #74818a; font-size: 7px; font-weight: 900; letter-spacing: .1em; }
-.receipt-items { display: grid; gap: 5px; margin: 6px 0; }
-.receipt-item-row { grid-template-columns: minmax(0,1fr) auto auto; gap: 7px; font-size: 8px; }
-.receipt-item-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.receipt-item-qty { color: #74818a; }
+.receipt-table { width: 100%; margin: 6px 0; border-collapse: collapse; table-layout: fixed; font-size: 10.5px; color: #1b2730; }
+.receipt-table th { padding: 4px 0 5px; border-bottom: 1px solid #17212b; color: #5b6770; font-size: 9px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.receipt-table td { padding: 4px 0; border-bottom: 1px dotted #b7c0c6; vertical-align: top; line-height: 1.35; }
+.receipt-table tbody tr:last-child td { border-bottom: 1px solid #17212b; }
+.receipt-table .c-no { width: 7%; text-align: center; }
+.receipt-table .c-qty { width: 11%; text-align: center; }
+.receipt-table .c-price { width: 23%; text-align: right; }
+.receipt-table .c-total { width: 25%; text-align: right; font-weight: 700; }
+.receipt-table .c-item { width: 34%; text-align: left; padding-left: 4px; padding-right: 3px; overflow-wrap: anywhere; }
+.receipt-table th.c-item { padding-left: 4px; }
+.receipt-table td.c-price, .receipt-table td.c-total, .receipt-table th.c-price, .receipt-table th.c-total { white-space: nowrap; }
+.receipt-table td.c-item { font-weight: 700; }
+.empty-receipt-row td { text-align: center; }
+.receipt-total-row strong, .receipt-total-row span:last-child { white-space: nowrap; }
 .empty-receipt-row { color: #a1adb5; font-style: italic; }
-.receipt-total-row { margin-top: 4px; align-items: baseline; color: #57646d; font-size: 8px; }
+.receipt-total-row { margin-top: 4px; align-items: baseline; color: #57646d; font-size: 10.5px; }
 .receipt-total-row strong { color: #18242d; }
-.grand-total { margin-top: 8px; padding: 8px 8px; border-radius: 7px; background: var(--navy); color: white; font-size: 10px; font-weight: 900; }
+.grand-total { margin-top: 8px; padding: 9px 10px; border-radius: 7px; background: var(--navy); color: white; font-size: 13px; font-weight: 900; }
 .grand-total strong, .grand-total span { color: white; }
 .change-row { color: var(--coral-dark); }
 .change-row strong { color: var(--coral-dark); }
-.receipt-note { display: grid; gap: 2px; margin-top: 10px; padding-top: 7px; border-top: 1px dashed #acb6bc; color: #57646d; font-size: 8px; }
+.receipt-note { display: grid; gap: 2px; margin-top: 10px; padding-top: 7px; border-top: 1px dashed #acb6bc; color: #57646d; font-size: 10.5px; }
 .receipt-note span { white-space: pre-wrap; overflow-wrap: anywhere; }
-.receipt-footer { display: grid; gap: 2px; margin-top: 16px; text-align: center; color: #7b878e; font-size: 7px; }
-.receipt-footer strong { color: var(--navy); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 10px; }
+.receipt-footer { display: grid; gap: 2px; margin-top: 16px; text-align: center; color: #7b878e; font-size: 9px; }
+.receipt-footer strong { color: var(--navy); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 13px; }
 .preview-note { position: relative; z-index: 1; margin: 16px auto 0; max-width: 330px; color: #73818a; text-align: center; font-size: 10px; line-height: 1.45; }
 .toast { position: fixed; z-index: 10; left: 50%; bottom: 24px; translate: -50% 16px; opacity: 0; pointer-events: none; padding: 11px 15px; border-radius: 10px; background: var(--navy); color: white; box-shadow: var(--shadow); font-size: 12px; font-weight: 700; transition: opacity .2s ease, translate .2s ease; }
 .toast.show { translate: -50% 0; opacity: 1; }
@@ -140,17 +149,17 @@ textarea { resize: vertical; line-height: 1.4; }
   .item-row output { font-size: 9px; }
   .action-row { flex-direction: column-reverse; }
   .secondary-button, .primary-button { width: 100%; justify-content: center; }
-  .receipt-paper { width: 80mm; }
+  .receipt-paper { width: 100mm; }
 }
 
 @media print {
-  @page { size: 80mm 120mm; margin: 0; }
-  html, body { width: 80mm; min-width: 80mm; margin: 0; background: white; }
+  @page { size: 100mm 140mm; margin: 0; }
+  html, body { width: 100mm; min-width: 100mm; margin: 0; background: white; }
   body * { visibility: hidden !important; }
   #receiptStage, #receiptStage * { visibility: visible !important; }
-  #receiptStage { position: absolute; inset: 0 auto auto 0; display: block; width: 80mm; min-height: 120mm; padding: 0; background: white; overflow: visible; }
+  #receiptStage { position: absolute; inset: 0 auto auto 0; display: block; width: 100mm; min-height: 120mm; padding: 0; background: white; overflow: visible; }
   #receiptStage::before, #receiptStage .preview-toolbar, #receiptStage .preview-note { display: none !important; }
-  #receipt { width: 80mm; min-height: 120mm; margin: 0; padding: 5mm 4.5mm 4mm; box-shadow: none; }
+  #receipt { width: 100mm; min-height: 120mm; margin: 0; padding: 5mm 5.5mm 4mm; box-shadow: none; }
   .receipt-logo { width: 28mm; height: 28mm; }
   .toast { display: none !important; }
 }
@@ -371,9 +380,15 @@ function renderItems() {
 function renderReceipt() {
   const result = totals();
   const visibleItems = state.items.filter((item) => item.name.trim() || Number(item.qty) || Number(item.price));
-  const itemRows = visibleItems.length ? visibleItems.map((item) => `
-    <div class="receipt-item-row"><span class="receipt-item-name">${escapeHTML(item.name || 'Item')}</span><span class="receipt-item-qty">${formatQuantity(item.qty)} ×</span><span>${formatMoney(itemTotal(item))}</span></div>
-  `).join('') : '<div class="empty-receipt-row">Belum ada item</div>';
+  const itemRows = visibleItems.length ? visibleItems.map((item, i) => `
+    <tr>
+      <td class="c-no">${i + 1}</td>
+      <td class="c-item">${escapeHTML(item.name || 'Item')}</td>
+      <td class="c-qty">${formatQuantity(item.qty)}</td>
+      <td class="c-price">${formatMoney(item.price)}</td>
+      <td class="c-total">${formatMoney(itemTotal(item))}</td>
+    </tr>
+  `).join('') : '<tr class="empty-receipt-row"><td colspan="5">Belum ada item</td></tr>';
   const optionalMeta = [state.address, state.phone].filter(Boolean).map(escapeHTML).join('  •  ');
   const paidRow = result.paid > 0 ? `<div class="receipt-total-row"><span>Dibayar</span><strong>${formatMoney(result.paid)}</strong></div><div class="receipt-total-row change-row"><span>${result.remaining > 0 ? 'Kurang' : 'Kembalian'}</span><strong>${formatMoney(result.remaining > 0 ? result.remaining : result.change)}</strong></div>` : '';
   const note = state.note.trim() ? `<div class="receipt-note"><strong>Catatan</strong><span>${escapeHTML(state.note)}</span></div>` : '';
@@ -388,9 +403,10 @@ function renderReceipt() {
     <div class="receipt-info"><span>No. ${escapeHTML(state.receiptNo || '-')}</span><span>${formatDate(state.date)}</span></div>
     <div class="receipt-customer">Pelanggan: <strong>${escapeHTML(state.customer || 'Umum')}</strong></div>
     <div class="receipt-rule dotted"></div>
-    <div class="receipt-items-head"><span>ITEM</span><span>JUMLAH</span></div>
-    <div class="receipt-items">${itemRows}</div>
-    <div class="receipt-rule dotted"></div>
+    <table class="receipt-table">
+      <thead><tr><th class="c-no">No</th><th class="c-item">Item</th><th class="c-qty">Qty</th><th class="c-price">Harga</th><th class="c-total">Total</th></tr></thead>
+      <tbody>${itemRows}</tbody>
+    </table>
     <div class="receipt-total-row"><span>Subtotal</span><strong>${formatMoney(result.subtotal)}</strong></div>
     ${result.discount ? `<div class="receipt-total-row"><span>Diskon</span><strong>− ${formatMoney(result.discount)}</strong></div>` : ''}
     ${result.extra ? `<div class="receipt-total-row"><span>Biaya tambahan</span><strong>+ ${formatMoney(result.extra)}</strong></div>` : ''}
